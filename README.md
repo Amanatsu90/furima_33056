@@ -1,24 +1,72 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column     | Type    | Options     |
+| ---------- | ------- | ----------- |
+| nickname   | string  | null: false |
+| email      | string  | null: false |
+| password   | string  | null: false |
+| last_name  | string  | null: false |
+| first_name | string  | null: false |
+| kana_last  | string  | null: false |
+| kana_first | string  | null: false |
+| birth      | integer | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :items
+- has_many :cards
 
-* Configuration
+## items テーブル
 
-* Database creation
+| Column          | Type        | Options                        |
+| --------------- | ----------- | ------------------------------ |
+| name            | string      | null: false                    |
+| text            | text        | null: false                    |
+| category        | string      | null: false                    |
+| condition       | string      | null: false                    |
+| delivery_fee    | string      | null: false                    |
+| sender_location | string      | null: false                    |
+| delivery_time   | string      | null: false                    |
+| price           | integer     | null: false                    |
+| user            | references  | null: false, foreign_key: true |
 
-* Database initialization
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- has_one :card
+- has_one_attached :image
 
-* Services (job queues, cache servers, search engines, etc.)
+## Cards テーブル
 
-* Deployment instructions
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| credit_card     | integer    | null: false                    |
+| validated_month | integer    | null: false                    |
+| validated_year  | integer    | null: false                    |
+| card_cvc        | integer    | null: false                    |
+| user            | references | null: false, foreign_key: true |
+| item            | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :user
+- belongs_to :item
+- has_one :shipping_address
+
+## Shipping_Address テーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| postal_code  | integer    | null: false                    |
+| prefectures  | string     | null: false                    |
+| city         | string     | null: false                    |
+| addresses    | string     | null: false                    |
+| building     | string     | null: false                    |
+| phone_number | integer    | null: false                    |
+| card         | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :card

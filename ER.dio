@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-01-04T03:13:27.153Z" agent="5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" version="13.10.0" etag="HiBQLCaZSx67TGL7uQT1" type="embed">
+<mxfile host="65bd71144e" modified="2021-01-04T03:37:46.052Z" agent="5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" version="13.10.0" etag="ILUHcSAd1kTi0QXyUmr9" type="embed">
     <diagram id="TjBQrChXtqNb7wPNytec" name="ページ1">
         <mxGraphModel dx="658" dy="529" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
@@ -90,7 +90,7 @@
                 <mxCell id="37" value="postal_code" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontColor=#F0F0F0;" vertex="1" parent="36">
                     <mxGeometry y="26" width="160" height="24" as="geometry"/>
                 </mxCell>
-                <mxCell id="38" value="prefectures" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="36">
+                <mxCell id="38" value="prefectures_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="36">
                     <mxGeometry y="50" width="160" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="39" value="city" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="36">
@@ -126,7 +126,7 @@
                         <Array as="points">
                             <mxPoint x="380" y="358"/>
                             <mxPoint x="380" y="293"/>
-                            <mxPoint x="319" y="293"/>
+                            <mxPoint x="323" y="293"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>

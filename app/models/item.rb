@@ -13,7 +13,6 @@ class Item < ApplicationRecord
     validates :name
     validates :info
     validates :price
-    validates :user
   end
   
   validates :category_id, numericality: { other_than: 1 }

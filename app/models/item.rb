@@ -21,9 +21,12 @@ class Item < ApplicationRecord
                       less_than_or_equal_to: 9_999_999
                     }
 
-  validates :category_id, numericality: { other_than: 1 }
-  validates :condition_id, numericality: { other_than: 1 }
-  validates :delivery_fee_id, numericality: { other_than: 1 }
-  validates :prefecture_id, numericality: { other_than: 1 }
-  validates :delivery_time_id, numericality: { other_than: 1 }
+  with_options numericality: { other_than: 1 } do
+    validates :category_id
+    validates :condition_id
+    validates :delivery_fee_id
+    validates :prefecture_id
+    validates :delivery_time_id
+  end
+
 end

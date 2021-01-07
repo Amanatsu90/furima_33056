@@ -12,8 +12,14 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :info
-    validates :price
+    validates :image
   end
+  
+  validates :price, presence: true, format: { with: /\A[0-9]+\z/},
+            numericality: { 
+              greater_than_or_equal_to: 300, 
+              less_than_or_equal_to: 9999999,
+           }
   
   validates :category_id, numericality: { other_than: 1 }
   validates :condition_id, numericality: { other_than: 1 }

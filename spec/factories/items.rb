@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :item do
-    name             {Faker::Commerce.product_name}
-    info             {Faker::Lorem.sentence}
-    price            {Faker::Commerce.price(range: 300..1000.0, as_string: true)}
+    name             { Faker::Commerce.product_name }
+    info             { Faker::Lorem.sentence }
+    price            { Faker::Commerce.price(range: 300..1000.0, as_string: true) }
     association :user
     association :category
     association :condition

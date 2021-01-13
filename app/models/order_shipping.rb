@@ -7,6 +7,7 @@ class OrderShipping
     validates :city
     validates :addresses
     validates :phone_number, length: {maximum: 11}
+    validates :token
   end
 
   validates :prefecture_id, numericality: { other_than: 1 }

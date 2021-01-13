@@ -57,13 +57,18 @@ RSpec.describe OrderShipping, type: :model do
     it '電話番号は11桁以内である事' do
       @order_shipping.phone_number = '090123456789'
       @order_shipping.valid?
-      expect(@order_shipping.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
+      expect(@order_shipping.errors.full_messages).to include('Phone number is invalid')
+    end
+    it '電話番号は数字のみでないと保存不可' do
+      @order_shipping.phone_number = '090-1234567'
+      @order_shipping.valid?
+      expect(@order_shipping.errors.full_messages).to include('Phone number is invalid')
     end
     it 'tokenが空では保存不可' do
       @order_shipping.token = ''
       @order_shipping.valid?
       expect(@order_shipping.errors.full_messages).to include("Token can't be blank")
     end
-    
+
   end
 end

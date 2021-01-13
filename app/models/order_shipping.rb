@@ -8,7 +8,7 @@ class OrderShipping
     validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
     validates :city
     validates :addresses
-    validates :phone_number, length: { maximum: 11 }
+    validates :phone_number, format: { with: /\A\d{11}\z/ }
     validates :token
   end
 

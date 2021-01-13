@@ -5,8 +5,24 @@ RSpec.describe OrderShipping, type: :model do
     @order_shipping = FactoryBot.build(:order_shipping)
   end
   describe '商品購入情報の保存' do
+
     it '必須項目が正しく入力されていれば保存可' do
       expect(@order_shipping).to be_valid
+    end
+    it '建物名が空でも保存可' do
+      @order_shipping.building = ''
+      expect(@order_shipping).to be_valid
+    end
+
+    it 'user_idが空では保存不可' do
+      @order_shipping.user_id = nil
+      @order_shipping.valid?
+      expect(@order_shipping.errors.full_messages).to include("User can't be blank")
+    end
+    it 'item_idが空では保存不可' do
+      @order_shipping.item_id = nil
+      @order_shipping.valid?
+      expect(@order_shipping.errors.full_messages).to include("Item can't be blank")
     end
     it '郵便番号が空では保存不可' do
       @order_shipping.postal_code = ''
@@ -48,5 +64,6 @@ RSpec.describe OrderShipping, type: :model do
       @order_shipping.valid?
       expect(@order_shipping.errors.full_messages).to include("Token can't be blank")
     end
+    
   end
 end

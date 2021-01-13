@@ -16,7 +16,7 @@ RSpec.describe OrderShipping, type: :model do
     it '郵便番号にはハイフンが必須である事' do
       @order_shipping.postal_code = '1234567'
       @order_shipping.valid?
-      expect(@order_shipping.errors.full_messages).to include("Postal code is invalid")
+      expect(@order_shipping.errors.full_messages).to include('Postal code is invalid')
     end
     it '都道府県を選択しないと保存不可' do
       @order_shipping.prefecture_id = 1
@@ -41,7 +41,7 @@ RSpec.describe OrderShipping, type: :model do
     it '電話番号は11桁以内である事' do
       @order_shipping.phone_number = '090123456789'
       @order_shipping.valid?
-      expect(@order_shipping.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+      expect(@order_shipping.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
     end
     it 'tokenが空では保存不可' do
       @order_shipping.token = ''

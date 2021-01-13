@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    redirect_to action: :index unless user_signed_in?
+    render :index unless user_signed_in?
   end
 
   def create
@@ -24,7 +24,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    redirect_to action: :index unless current_user.id == @item.user.id
+    render :index unless current_user.id == @item.user.id
+    return
+    render :index if @item.order.present?
+    return
   end
 
   def update

@@ -43,5 +43,10 @@ RSpec.describe OrderShipping, type: :model do
       @order_shipping.valid?
       expect(@order_shipping.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
     end
+    it 'tokenが空では保存不可' do
+      @order_shipping.token = ''
+      @order_shipping.valid?
+      expect(@order_shipping.errors.full_messages).to include("Token can't be blank")
+    end
   end
 end

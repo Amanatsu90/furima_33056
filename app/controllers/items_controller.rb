@@ -24,10 +24,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    render :index unless current_user.id == @item.user.id
-    return
-    render :index if @item.order.present?
-    return
+    redirect_to root_path unless current_user.id == @item.user.id
+    redirect_to root_path if @item.order.present?
   end
 
   def update

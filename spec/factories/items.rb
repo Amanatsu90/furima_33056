@@ -11,7 +11,7 @@ FactoryBot.define do
     association :delivery_time
 
     after(:build) do |message|
-      message.image.attach(io: File.open('public/images/sample1.png'), filename: 'test_image.png')
+      message.image.attach(io: File.open('public/images/sample1.png'), filename: 'sample1.png')
     end
   end
 end
